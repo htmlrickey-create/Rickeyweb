@@ -1,0 +1,343 @@
+
+/* =========================
+   全体設定
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", "Meiryo", sans-serif;
+    color: #f1f5f9;
+    background: linear-gradient(135deg, #0f172a, #171b3d, #172554);
+    background-attachment: fixed;
+    line-height: 1.7;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+header {
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: rgba(15, 23, 42, 0.75);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+header h1 {
+    font-size: clamp(18px, 2.5vw, 26px);
+    letter-spacing: 1px;
+}
+
+header a {
+    color: #bfdbfe;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #f63b3b;
+    border-radius: 10px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+/* =========================
+   作品の概要カード
+========================= */
+.detile-card {
+    width: min(90%, 950px);
+    margin: 80px auto 100px;
+    padding: 55px 45px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(129, 140, 248, 0.35);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    animation: fadeIn 0.8s ease;
+}
+
+.detile-card h3 {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-size: clamp(28px, 4vw, 42px);
+    color: #a5b4fc;
+    letter-spacing: 2px;
+    text-shadow: 0 0 25px rgba(129, 140, 248, 0.25);
+}
+
+.detile-card h5 {
+    font-size: clamp(14px, 1.7vw, 17px);
+    font-weight: 400;
+    line-height: 2.2;
+    color: #cbd5e1;
+}
+
+/* =========================
+   制作ステップ全体
+========================= */
+.stepup-detile {
+    width: min(90%, 1000px);
+    margin: 0 auto 100px;
+    text-align: center;
+}
+
+.stepup-detile > h2 {
+    margin-bottom: 55px;
+    font-size: clamp(23px, 3vw, 34px);
+    color: #e0e7ff;
+    letter-spacing: 1px;
+}
+
+.stepup-detile > h1 {
+    margin: 25px 0;
+    font-size: 42px;
+    color: #818cf8;
+    text-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
+}
+
+/* =========================
+   ステップカード共通
+========================= */
+
+.stepup-card1{
+    position: relative;
+    width: 100%;
+    padding: 35px 30px;
+    overflow-wrap: anywhere;
+    background: rgba(144, 254, 185, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s, border-color 0.3s,box-shadow 0.3s;
+}
+
+.stepup-card2{
+    position: relative;
+    width: 100%;
+    padding: 35px 30px;
+    overflow-wrap: anywhere;
+    background: rgba(241, 250, 151, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s, border-color 0.3s,box-shadow 0.3s;
+}
+
+.stepup-card3{
+    position: relative;
+    width: 100%;
+    padding: 35px 30px;
+    overflow-wrap: anywhere;
+    background: rgba(255, 0, 0, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.3s, border-color 0.3s,box-shadow 0.3s;
+}
+
+.stepup-card1:hover,
+.stepup-card2:hover,
+.stepup-card3:hover {
+    transform: translateY(-5px);
+    border-color: #f7f7f9;
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15);
+}
+
+/* 各ステップの上部ライン */
+.stepup-card1 {
+    border-top: 4px solid rgba(148, 163, 184, 0.25);
+}
+
+.stepup-card2 {
+    border-top: 4px solid rgba(148, 163, 184, 0.25);
+}
+
+.stepup-card3 {
+    border-top: 4px solid rgba(148, 163, 184, 0.25);
+}
+
+/* カード内の見出し */
+.stepup-card1 h3,
+.stepup-card2 h3,
+.stepup-card3 h3 {
+    margin-bottom: 15px;
+    font-size: clamp(21px, 2.5vw, 28px);
+    color: #f8fafc;
+}
+
+/* 使用技術 */
+.stepup-card1 h4,
+.stepup-card2 h4,
+.stepup-card3 h4 {
+    font-size: clamp(14px, 1.8vw, 17px);
+    font-weight: 400;
+    line-height: 2;
+    color: #cbd5e1;
+}
+
+/* 補足説明 */
+.stepup-card2 h6,
+.stepup-card3 h6 {
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+/* 進捗マーカー全体 */
+.stepup-marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: min(90%, 1000px);
+    margin: 40px auto;
+}
+
+/* マーカーカード共通 */
+.marker-card {
+    min-width: 160px;
+    padding: 16px 28px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: #f8fafc;
+    background: rgba(30, 41, 59, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* ホバー時 */
+.marker-card:hover {
+    transform: translateY(-4px);
+}
+
+/* 完成 */
+.marker-card:nth-child(1) {
+    border-left: 5px solid rgba(144, 254, 185, 0.75);
+    color: rgba(144, 254, 185, 0.75);
+}
+
+/* 作成中 */
+.marker-card:nth-child(2) {
+    border-left: 5px solid rgba(241, 250, 151, 0.75);
+    color: rgba(241, 250, 151, 0.75);
+}
+
+/* 未完成 */
+.marker-card:nth-child(3) {
+    border-left: 5px solid rgba(255, 0, 0, 0.75);
+    color: rgba(255, 0, 0, 0.75);
+}
+
+
+
+/* =========================
+   表示アニメーション
+========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   スマートフォン対応
+========================= */
+@media (max-width: 600px) {
+    header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+    }
+
+    header h1 {
+        width: 100%;
+        font-size: 21px;
+    }
+
+    header a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .detile-card {
+        margin: 45px auto 70px;
+        padding: 35px 20px;
+    }
+
+    .detile-card h5 {
+        line-height: 2;
+    }
+
+    .stepup-detile {
+        width: 90%;
+        margin-bottom: 60px;
+    }
+
+    .stepup-detile > h2 {
+        margin-bottom: 35px;
+    }
+
+    .stepup-detile > h1 {
+        margin: 18px 0;
+        font-size: 34px;
+    }
+
+    .stepup-card1,
+    .stepup-card2,
+    .stepup-card3 {
+        padding: 28px 18px;
+    }
+
+    .stepup-card2 h4 br {
+        display: none;
+    }
+}
+
+/* 動きを減らす設定が有効な場合 */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .stepup-marker {
+        gap: 12px;
+    }
+
+    .marker-card {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 20px;
+    }
+}
