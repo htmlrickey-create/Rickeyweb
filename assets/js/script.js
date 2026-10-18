@@ -6,7 +6,7 @@
 
         const checkValue = pagehref.dataset.page;
 
-        if(checkValue === "comming-soon"){
+        if(checkValue === "coming-soon"){
             window.location.href = './Comming.html';
         }else if(checkValue === "progress"){
             window.location.href = './detile.html';
